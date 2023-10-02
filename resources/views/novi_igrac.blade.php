@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Unos novih igrača</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Novi igrac</title>
+    @include('header')
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('public/css/app.css') }}">
 </head>
 <style>
-    form {
-        background-color: lightgray; 
-        padding: 20px; 
-        border: 1px solid #dee2e6;
-        border-radius: 0.3rem; 
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   body{
+        background-image: url("slike/pozadina_igraci.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .form-container {
+        background-color: #333; 
+        padding: 20px;
+        border-radius: 10px;
+        color: white;
     }
 
-    .custom-alert {
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin: 10px;
-        z-index: 9999;
-    }
 </style>
 <body>
-    @include('header')
     <div class="mx-auto" style="width: 500px; position: relative;">
-        <form action="novi_igrac" class="jumbotron mt-1" method="POST">
+        <form action="novi_igrac" class="jumbotron mt-1 form-container" method="POST" enctype="multipart/form-data">
             @csrf
             <h2 style="font-weight: bold">Unos novih igrača</h2>
             <label for="ime" class="mt-3">Unesite ime:</label>
@@ -55,7 +54,7 @@
             <input type="text" class="form-control" name="brKartona" placeholder="Unesite broj kartona">
             <label for="dres" class="mt-3">Broj dresa:</label>
             <input type="text" class="form-control" name="brDresa" placeholder="Unesite broj dresa">
-            <label for="slika" class="mt-3">Slika(Nije obavezno):</label>
+            <label for="s" class="mt-3">Slika(Nije obavezno):</label>
             <input type="file" class="form-control mt-3" name="slika" id="slika">
             <input type="submit" class="btn btn-primary btn-success mt-3" value="Unesi igrača">
         </form>
@@ -73,5 +72,6 @@
         @endif
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+        @include('footer')
 </body>
 </html>

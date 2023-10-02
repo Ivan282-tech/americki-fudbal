@@ -9,14 +9,15 @@ use App\Http\Controllers\Controller;
 
 class IgracController extends Controller
 {
+
     public function dodajIgraca(Request $request){
         $validacija = $request->validate([
            'ime' => 'required|string',
            'prezime' => 'required',
            'godine' => 'required|integer|min:0|max:100',
            'pol' => 'required|string|in:M,Z',
-           'visina' => 'required|integer|min:0|max:200',
-           'tezina' => 'required|integer|min:0|max:200',
+           'visina' => 'required|integer|min:0|max:500',
+           'tezina' => 'required|integer|min:0|max:500',
            'pozicija' => 'required|integer|min:1|max:20',
            'brKartona' => 'required|string|max:255',
            'brDresa' => 'required|string|max:255'
@@ -33,15 +34,15 @@ class IgracController extends Controller
         $igrac->pozicija = $validacija['pozicija'];
         $igrac->visina = $validacija['visina'];
         $igrac->tezina = $validacija['tezina'];
-        $igrac->slika = $request['slika'];
 
         if($request->hasFile('slika')){
             $slika = $request->file('slika');
-            $ime_slike = time() . $slika->getClientOriginalExtension();
+            $ime_slike = time() . $slika->getClientOriginalName();
             $slika->move(public_path('slike_igraca'), $ime_slike);
-            $igrac->slika = 'slike_igraca/' . $ime_slike;
+            $igrac->slika = 'slike_igraca/' . $ime_slike;    
         }
-
+      
+        
         $igrac->save();
 
         return redirect()->route('listaIgraca');
@@ -53,7 +54,6 @@ class IgracController extends Controller
         ->join('igraci', 'pozicije.id', '=', 'igraci.pozicija')
         ->select('igraci.slika', 'igraci.ime', 'igraci.prezime', 'igraci.godina', 'igraci.pol', 'igraci.broj_kartice', 'igraci.broj_dresa', 'igraci.visina', 'igraci.tezina', 'pozicije.naziv')
         ->get();
-
         return view('lista_igraca', ['igraci' => $igraci]);
     }
 }
