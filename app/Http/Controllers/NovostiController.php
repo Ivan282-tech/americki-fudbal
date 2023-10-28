@@ -14,7 +14,7 @@ class NovostiController extends Controller
     public function dodajNovost(Request $request){
         $validacija = $request->validate([
             'naslov' => 'required|max:100',
-            'tekst' => 'required|max:300',
+            'tekst' => 'required',
             'slike.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,jfif',
         ]);
 
@@ -68,6 +68,9 @@ class NovostiController extends Controller
     }
 
     public function vratiFormu(Novosti $novost){
+        if(Auth::user() == null){
+            return redirect()->back()->with('Greška', 'Ne možete da pristupite izmenama novosti');
+        }
         if(Auth::user()->id == $novost->korisnik_id){
             return view('izmeni_novost_forma', ['novost' => $novost]);
         }else{
@@ -85,7 +88,7 @@ class NovostiController extends Controller
         if(Auth::user()->id == $novost->korisnik_id){
             $validacija = $request->validate([
                 'naslov' => 'required|max:100',
-                'tekst' => 'required|max:300',
+                'tekst' => 'required',
                 'slike.*' => 'nullable|image|mimes:jpeg,png,jpg,gif',
             ]);
 

@@ -8,91 +8,10 @@
     <title>Document</title>
     @include('header')
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ asset('public/css/app.css') }}">
+    <link rel="stylesheet" href="{{asset('css/app.css') }}">
 </head>
-<style>
-   body {
-        background-image: url("slike/pozadina_igraci.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
 
-    .post {
-        background-color: rgba(255, 255, 255, 0.8);
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        margin-bottom: 10px; 
-        padding: 0;
-        width: 300px;
-        transition: transform 0.2s;
-    }
-    .post:hover {
-        transform: scale(1.05);
-    }
-    @keyframes animation {
-        from {
-            opacity: 0;
-            transform: translateX(-20px); 
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-    .animation {
-        animation: animation 1s ease-in-out;
-    }
-    
-    .post h3 {
-        font-size: 24px;
-        margin-top: 0;
-        text-align: center; 
-        height: 60px; 
-        overflow: hidden; 
-    }
 
-    .post-text {
-        margin: 10px;
-        overflow: hidden; 
-        text-overflow: ellipsis; 
-        white-space: nowrap; 
-    }
-
-    .post-images {
-        width: 100%;
-        height: 150px;
-        overflow: hidden;
-    }
-
-    .post-images img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; 
-    }
-
-    .post-details {
-        padding: 10px;
-        text-align: left;
-    }
-
-    .post-date {
-        font-size: 14px;
-        margin-bottom: 5px;
-        margin-top: -10px; /* Pomeri datum bliže slici */
-    }
-
-    .footer {
-        position: fixed;
-    }
-    #title{
-        padding: 50px 100px 50px 100px;
-        text-align: center;
-        background-color: #12072d;
-        margin-top: 30px;
-        color: white;
-        opacity: 1;
-        font-weight: bolder;
-    }
-</style>
 <body>
     <div>
         <div class="row ml-3 justify-content-start">
@@ -127,8 +46,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <div class="footer">
+    <!-- <footer>
         @include('footer')
-    </div>
+    </footer> -->
+   
+   
 </body>
 </html>

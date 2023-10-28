@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="{{ asset('public/css/app.css') }}">
 </head>
     <style>
-        body{
-        background-color:cadetblue
+      body {
+        background-image: url("slike/pozadina_igraci.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     .form-container {
         background-color: #333; 
@@ -61,8 +63,8 @@
             </div>
     @endif
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <footer class="footer">
+    <!-- <footer>
         @include('footer')
-    </footer>
+    </footer> -->
 </body>
 </html>

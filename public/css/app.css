@@ -1,0 +1,198 @@
+
+body {
+    background-image: url("../slike/pozadina_igraci.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.post {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px; 
+    width: 100%; 
+    max-width: 800px; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.post:hover {
+    transform: scale(1.05);
+}
+
+@keyframes animation {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animation {
+    animation: animation 1.5s ease-in-out;
+}
+
+.post h3 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.post-text {
+    margin: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.post-images {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.post-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-details {
+    padding: 10px;
+    text-align: left;
+}
+
+.post-date {
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: -10px;
+}
+#title {
+    padding: 50px 100px 50px 100px;
+    text-align: center;
+    background-color: #12072d;
+    margin-top: 30px;
+    color: white;
+    opacity: 1;
+    font-weight: bolder;
+}
+
+/* LISTA IGRACA */
+.player-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    margin-left: 20px;
+    background-color: transparent;
+}
+
+.player-card.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.9;
+    }
+}
+
+.animated-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.player-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.player-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+#basic-info {
+    background-color: #12072d;
+    color: white;
+    opacity: 1;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+/* Dodaj novost */
+.form-container {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+/* Upravljanje novostima */
+.post {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.post h3 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.post .text-muted {
+    font-size: 14px;
+    color: #666;
+}
+
+.post .post-text {
+    font-size: 16px;
+}
+
+.post-images img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.btn {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 15px; /* Dodatna margina između gumba */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}

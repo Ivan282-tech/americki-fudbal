@@ -8,22 +8,9 @@
     <title>Novi igrac</title>
     @include('header')
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ asset('public/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
-<style>
-   body{
-        background-image: url("slike/pozadina_igraci.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    .form-container {
-        background-color: #333; 
-        padding: 20px;
-        border-radius: 10px;
-        color: white;
-    }
 
-</style>
 <body>
     <div class="mx-auto" style="width: 500px; position: relative;">
         <form action="novi_igrac" class="jumbotron mt-1 form-container" method="POST" enctype="multipart/form-data">
@@ -72,6 +59,9 @@
         @endif
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- <footer>
         @include('footer')
+    </footer> -->
+        
 </body>
 </html>

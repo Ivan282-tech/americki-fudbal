@@ -13,9 +13,6 @@
     <link rel="stylesheet" href="{{ asset('public/css/app.css') }}">
 </head>
 <style>
-    body{
-        overflow: hidden;
-    }
     .footer {
         bottom: 0;
         position: fixed;
@@ -70,8 +67,8 @@
         </div>
     </div>
 
-    <div class="footer"> 
+    <!-- <footer>
         @include("footer")
-    </div>
+    </footer> -->
 </body>
 </html>

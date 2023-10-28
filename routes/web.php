@@ -33,6 +33,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('dodaj_novost', [NovostiController::class, 'dodajNovost']);
 
     Route::get('upravljajNovostima', [NovostiController::class, 'vratiSveNovostiKorisnika'])->name('upravljajNovostima');
+
+    
     
 });
 
@@ -44,17 +46,18 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('pocetna');
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
-Route::post('/forma-login', function(){
-    return view('login');
-})->name('forma-login');
-
-
 Route::delete('obrisi_novost/{id}', [NovostiController::class, 'obrisiNovost'])->name('obrisi_novost');
 
 Route::get('izmeni_novost/{novost}', [NovostiController::class, 'vratiFormu'])->name('vrati_formu');
 
 
 Route::post('izmeni_novost/{id}', [NovostiController::class, 'sacuvaj_izmene'])->name('upisi_izmenu');
+
+
+Route::post('/forma-login', function(){
+    return view('login');
+})->name('forma-login');
+
+
 
 Route::get('prikazi_post/{id}', [NovostiController::class, 'vratiPost'])->name("prikaz_posta");

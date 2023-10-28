@@ -1,13 +1,14 @@
 <style>
-    footer {
-        position: relative;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #12072d;
-        padding: 5px 10px 30px 10px;
-        opacity: 0.9;
-    }
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+            z-index: 1000; 
+        }
     .social {
         font-size: 36px;
         margin-left: 20px; 

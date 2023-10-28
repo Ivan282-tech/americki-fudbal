@@ -7,25 +7,8 @@
     <title>Nove vesti!</title>
     @include('header')
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ asset('public/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
-    <style>
-    body{
-        background-image: url("slike/pozadina_igraci.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    .form-container {
-        background-color: #333; 
-        padding: 20px;
-        border-radius: 10px;
-        color: white;
-    }
-    .footer{
-        position: fixed;
-        bottom: 0;
-    }
-    </style>
 <body>
     <div class="mx-auto" style="width: 500px; position: relative;">
         <form action="dodaj_novost" class="mt-3 form-container" enctype="multipart/form-data" method="POST">
@@ -50,9 +33,9 @@
             </div>
     @endif
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <div class="footer">
+    <!-- <footer>
         @include('footer');
-    </div>
+    </footer> -->
    
 </body>
 </html>
